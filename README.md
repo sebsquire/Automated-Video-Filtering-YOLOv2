@@ -10,7 +10,7 @@ Problem: A friend of mine mentioned a neighbour of his was receiving so much bus
 
 Solution: Using Darknet's implementation of a pre-trained YOLOv2 model (https://pjreddie.com/darknet/yolov2/) for automated object detection. Possible business traffic (meaningful) and other (not meaningful) videos can then be separated by analysis of bounding box position and dimensions.
 
-Method (techniques explained in Module Descriptions):
+Method (techniques explained in Module Descriptions and noted code):
  - ~3500 videos/day are produced, presented as two second chunks due to a quirk of the motion detection camera software. Hence, consecutive videos concerning the same object must be merged for easier watchability. This reduces number of videos needed to be inspected by 90%, although overall length of video to be inspected is the same.
  - Merged videos are searched by the YOLOv2 algorithm to find those containing vehicles and frame by frame results are recorded in individual CSVs for each video.
  - CSVs for each video are searched in Python to find those containing vehicle bounding boxes in requisite positions indicating possible business traffic. A list of videos to be manually inspected is presented.
