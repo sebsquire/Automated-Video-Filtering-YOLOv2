@@ -30,7 +30,7 @@ Instructions for real time object recognition for individual videos are included
 
 Results: Number of videos to be manually inspected decreased by ~98%. This is composed of a ~90% decrease through merging consecutive videos and subsequent ~85% decrease through retaining only videos containing vehicles in positions indicating possible business traffic. Hence, ~50 videos must be manually inspected per day, of which around half contain business traffic.
 
-Why YOLOv2? YOLO is an effective and quick, state-of-the-art, real-time object detection system capable - most applicable given the volume of video to be processed. 
+Why YOLOv2? YOLO (https://arxiv.org/abs/1506.02640) is an effective and quick, state-of-the-art, real-time object detection system capable - most applicable given the volume of video to be processed. 
 
 Future Improvements: 
  - Mask-R-CNN yields more detailed results allowing for semantic segmentation of different object instances, leaeding to theoretically perfectly accurate automated video inspection for this application (as vehicle orientation indicated by masks produced can be used to highlight those pulling into the neighbours) but requires significantly more processing time and was deemed inapplicable given the volume of video to be processed per day.
