@@ -4,6 +4,7 @@ Reduces specific manual video inspection task by discarding the majority of mean
 Title: Automated Video Filter for traffic analysis
 
 Dependencies: Python 3, Darkflow's YOLOv2, OpenCV, NumPy, tqdm, Pandas, glob
+N.B.: For adequate speed GPU must be set up for use, otherwise set "gpu" in options to 0.0 (in Process.py) to use your CPU and get the kettle on as it'll be a long day.
 
 Problem: A friend of mine mentioned a neighbour of his was receiving so much business traffic to their home run business, significant disruptions were being caused on their usually quiet road (along with the extra noise pollution and lack of available road space). The council seemed unwilling to hear a case against them without concrete evidence so this friend bought and set up a motion detecting camera pointed at the public road. Unfortunately, this resulted in a large number of videos that were not meaningful - people walking their dogs and putting bins out, cars driving to other addresses, etc. This seemed like the perfect use for machine learning image processing algorithms to filter out the majority of meaningless videos and allow for a drastically reduced manual video filtering task.
 
@@ -19,6 +20,7 @@ Module Descriptions:
  - MergeVideos.py: Merges consecutive videos for easier inspection (both automated and manual) and easier recording of possible meaningful videos.
  - VidInputDetect.py: Creates a new CSV for each video detailing positions of bounding boxes for each vehicle (car/truck) object detected in each frame.
  - ListOfYVids.py: Searches each CSV for vehicles in requisite locations indicating possible business traffic and creates a list of possible videos.
+ - Process.py: Combines previous 3 modules to fully process a batch of input videos and produce a details of videos to be manually inspeced.
 
 Results: Number of videos to be manually inspected decreased by ~98%. This is composed of a ~90% decrease through merging consecutive videos and subsequent ~85% decrease through retaining only videos containing vehicles in positions indicating possible business traffic. Hence, ~50 videos must be manually inspected per day, of which around half contain business traffic.
 
