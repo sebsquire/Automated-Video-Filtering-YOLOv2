@@ -21,6 +21,12 @@ Module Descriptions:
  - VidInputDetect.py: Creates a new CSV for each video detailing positions of bounding boxes for each vehicle (car/truck) object detected in each frame.
  - ListOfYVids.py: Searches each CSV for vehicles in requisite locations indicating possible business traffic and creates a list of possible videos.
  - Process.py: Combines previous 3 modules to fully process a batch of input videos and produce a details of videos to be manually inspeced.
+ 
+To run the processing yourself:
+ - Download sample videos from https://www.dropbox.com/sh/8m7xzrxmw75hrlq/AABdE0hD9nAHgHkzoSHc1_SMa?dl=0
+ - Open the folder and place the 3 folders into the same folder as your cloned repository (like this: https://gyazo.com/b164c2d1385e9ff479beaddae2a24009)
+ - Run Process.py and select Y for each of the 3 options
+Instructions for real time object recognition for individual videos are included in RealTimeVidDetect.
 
 Results: Number of videos to be manually inspected decreased by ~98%. This is composed of a ~90% decrease through merging consecutive videos and subsequent ~85% decrease through retaining only videos containing vehicles in positions indicating possible business traffic. Hence, ~50 videos must be manually inspected per day, of which around half contain business traffic.
 
