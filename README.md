@@ -4,7 +4,7 @@ Reduces specific manual video inspection task by discarding the majority of mean
 Title: Automated Video Filter for traffic analysis
 
 Dependencies: Python 3, Darkflow's YOLOv2, OpenCV, NumPy, tqdm, Pandas, glob. 
-N.B.: For adequate speed GPU must be set up for use, otherwise set "gpu" in options to 0.0 (in Process.py) to use your CPU and get the kettle on as it'll be a long day.
+N.B.: For adequate speed GPU must be set up for use, otherwise set "gpu" in options to 0.0 (in Process.py) to use your CPU.
 
 Problem: A friend of mine mentioned a neighbour of his was receiving so much business traffic to their home run business, significant disruptions were being caused on their usually quiet road (along with the extra noise pollution and lack of available road space). The council seemed unwilling to hear a case against them without concrete evidence so this friend bought and set up a fixed motion detecting camera pointed at the public road. Unfortunately, this resulted in a large number of videos that were not meaningful - people walking their dogs and putting bins out, trees blowing in the wind, etc. This seemed like the perfect use for machine learning image processing algorithms to filter out the majority of meaningless videos and allow for a drastically reduced manual video filtering task.
 
