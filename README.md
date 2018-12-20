@@ -32,6 +32,8 @@ Instructions for real time object recognition for individual videos are included
 
 Results: Number of videos to be manually inspected decreased by ~98%. This is composed of a ~90% decrease through merging consecutive videos and subsequent ~85% decrease through retaining only videos containing vehicles in positions indicating possible business traffic. Hence, ~50 videos must be manually inspected per day, of which around half contain business traffic.
 
+FYI: The council and my friend finally agreed 25 videos (~13 visits) per day did not constitute unreasonable home run business traffic and he abandoned pursuing the case.
+
 Why YOLOv2? YOLO (https://arxiv.org/abs/1506.02640) is an effective and quick, state-of-the-art, real-time object detection system capable - most applicable given the volume of video to be processed. 
 
 Future Improvements: 
