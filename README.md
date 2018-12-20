@@ -6,12 +6,12 @@ Title: Automated Video Filter for traffic analysis
 Dependencies: Python 3, Darkflow's YOLOv2, OpenCV, NumPy, tqdm, Pandas, glob. 
 N.B.: For adequate speed GPU must be set up for use, otherwise set "gpu" in options to 0.0 (in Process.py) to use your CPU.
 
-Problem: A friend of mine mentioned a neighbour of his was receiving so much business traffic to their home run business, significant disruptions were being caused on their usually quiet road (along with the extra noise pollution and lack of available road space). The council seemed unwilling to hear a case against them without concrete evidence so this friend bought and set up a fixed motion detecting camera pointed at the public road. Unfortunately, this resulted in a large number of videos that were not meaningful - people walking their dogs and putting bins out, trees blowing in the wind, etc. This seemed like the perfect use for machine learning image processing algorithms to filter out the majority of meaningless videos and allow for a drastically reduced manual video filtering task.
+Problem: A friend mentioned a neighbour of his was receiving significant traffic to their home run business causing disruptions on their usually quiet road, along with extra noise pollution and safety issues. The council was unwilling to hear a case without evidence, which it was unwilling to collect. A fixed motion detecting camera used for security captured areas of the public road. Unfortunately, this resulted in a large number of videos that were not meaningful - people walking their dogs and putting bins out, trees blowing in the wind, etc. This seemed like the perfect use for machine learning image processing algorithms to filter out the majority of meaningless videos and allow for a drastically reduced manual video filtering task.
 
 Solution: Using Darknet's implementation of a pre-trained YOLOv2 model (https://pjreddie.com/darknet/yolov2/) for automated object detection. Possible business traffic (meaningful) and other (not meaningful) videos can then be separated by analysis of bounding box position and dimensions.
 
 Method (techniques explained in Module Descriptions and noted code):
- - ~3500 videos/day are produced, presented as two second chunks due to a quirk of the motion detection camera software. Hence, consecutive videos concerning the same object must be merged for easier watchability. This reduces number of videos needed to be inspected by 90%, although overall length of video to be inspected is the same.
+ - ~3500 videos/day are produced, presented as two second chunks due to a characteristic of the motion detection camera software. Hence, consecutive videos concerning the same object must be merged for easier watchability. This reduces number of videos needed to be inspected by 90%, although overall length of video to be inspected is the same.
  - Merged videos are searched by the YOLOv2 algorithm to find those containing vehicles and frame by frame results are recorded in individual CSVs for each video.
  - CSVs for each video are searched in Python to find those containing vehicle bounding boxes in requisite positions indicating possible business traffic. A list of videos to be manually inspected is presented.
 
@@ -30,9 +30,9 @@ To run the processing yourself:
 Sample videos contain (once merged) one false positive, two true negatives, and two true positives for illustration of each. The cost of false negatives was deemed to be much higher than false positives so pixel values for vehicle detection are adjusted such as to effectively remove the possibility of false negatives.
 Instructions for real time object recognition for individual videos are included in RealTimeVidDetect.
 
-Results: Number of videos to be manually inspected decreased by ~98%. This is composed of a ~90% decrease through merging consecutive videos and subsequent ~85% decrease through retaining only videos containing vehicles in positions indicating possible business traffic. Hence, ~50 videos must be manually inspected per day, of which around half contain business traffic.
+Results: Number of videos to be manually inspected decreased by ~98.5%. This is composed of a ~90% decrease through merging consecutive videos and subsequent ~85% decrease through retaining only videos containing vehicles in positions indicating possible business traffic. Hence, ~50 videos must be manually inspected per day, of which around half contain business traffic.
 
-FYI: The council and my friend finally agreed 25 videos (~13 visits) per day did not constitute unreasonable home run business traffic and he ceased pursuing the case.
+FYI: The council sought and gained assurances from the neighbour on levels of traffic and he ceased pursuing the case.
 
 Why YOLOv2? YOLO (https://arxiv.org/abs/1506.02640) is an effective and quick, state-of-the-art, real-time object detection system capable - most applicable given the volume of video to be processed. 
 
