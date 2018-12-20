@@ -26,6 +26,7 @@ To run the processing yourself:
  - Download sample videos from https://www.dropbox.com/sh/8m7xzrxmw75hrlq/AABdE0hD9nAHgHkzoSHc1_SMa?dl=0
  - Open the folder and place the 3 folders into the same folder as your cloned repository (like this: https://gyazo.com/b164c2d1385e9ff479beaddae2a24009)
  - Run Process.py and select Y for each of the 3 options
+
 Sample videos contain (once merged) one false positive, two true negatives, and two true positives for illustration of each. The cost of false negatives was deemed to be much higher than false positives so pixel values for vehicle detection are adjusted such as to effectively remove the possibility of false negatives.
 Instructions for real time object recognition for individual videos are included in RealTimeVidDetect.
 
